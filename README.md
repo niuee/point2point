@@ -1,3 +1,1 @@
-This is a very basic boilerplate that I use for some of my project that use typescript and jest.
-I have the typescript transpiler installed globally so the build script in the package.json file might not work for you if 
-you would like to use this for your own boilerplate.
+This is a minimal vector calculation library that I wrote for my horse race track maker and parser as part of my horse racing game side project. Detail Documenation will follow in the near future.
