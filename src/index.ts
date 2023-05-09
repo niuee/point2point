@@ -64,14 +64,14 @@ export class PointCal {
     }
 
     static unitVectorFromA2B(a: point, b: point) {
-        return this.unitVector(this.subVector(a, b));
+        return this.unitVector(this.subVector(b, a));
     }
 
     static rotatePoint(point: point, angle: number) {
         return {x: point.x * Math.cos(angle) - point.y * Math.sin(angle), y: point.x * Math.sin(angle) + point.y * Math.cos(angle)};
     }
 
-    static angleBetweenVectors2D(a: point, b: point) {
+    static angleFromA2B(a: point, b: point) {
         return Math.atan2(a.x * b.y - a.y * b.x, a.x * b.x + a.y * b.y);
     }
 
