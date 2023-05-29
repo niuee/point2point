@@ -62,4 +62,14 @@ export declare class PointCal {
         y: number;
     };
     static angleFromA2B(a: point, b: point): number;
+    static transformPointWRTAnchor(point: point, anchor: point, angle: number): {
+        x: number;
+        y: number;
+        z?: undefined;
+    } | {
+        x: number;
+        y: number;
+        z: number;
+    };
+    static distanceBetweenPoints(a: point, b: point): number;
 }

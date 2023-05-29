@@ -75,6 +75,14 @@ class PointCal {
     static angleFromA2B(a, b) {
         return Math.atan2(a.x * b.y - a.y * b.x, a.x * b.x + a.y * b.y);
     }
+    static transformPointWRTAnchor(point, anchor, angle) {
+        // angle is in radians
+        let newPoint = this.rotatePoint(this.subVector(point, anchor), angle);
+        return this.addVector(newPoint, anchor);
+    }
+    static distanceBetweenPoints(a, b) {
+        return this.magnitude(this.subVector(a, b));
+    }
 }
 exports.PointCal = PointCal;
 //# sourceMappingURL=index.js.map
