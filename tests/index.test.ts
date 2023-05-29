@@ -43,9 +43,23 @@ describe("Point to Point operations", () => {
         expect(Point2Point.PointCal.unitVectorFromA2B({x: 1, y: 0}, {x: 0, y: 1})).toEqual(expect.objectContaining({x: -1/Math.sqrt(2), y: 1/Math.sqrt(2)}))
     });
 
-    test("Rotate Point", () => {
-        let res = Point2Point.PointCal.rotatePoint({x: 1, y: 0}, Math.PI/ 2);
-        expect(res.x).toBeCloseTo(0, 5);
-        expect(res.y).toBeCloseTo(1, 5);
+    describe("Point Transformation", () => {
+        test("Rotate Point", () => {
+            let res = Point2Point.PointCal.rotatePoint({x: 1, y: 0}, Math.PI/ 2);
+            expect(res.x).toBeCloseTo(0, 5);
+            expect(res.y).toBeCloseTo(1, 5);
+        });
+
+        test("Rotate Point with respect to an Anchor Point", () => {
+            let res = Point2Point.PointCal.transformPointWRTAnchor({x: 1, y: 0}, {x: 0, y: 0}, Math.PI/ 2);
+            expect(res.x).toBeCloseTo(0, 5);
+            expect(res.y).toBeCloseTo(1, 5);
+        });
     });
+
+    test("Distance Between Two Points", () => {
+        let res = Point2Point.PointCal.distanceBetweenPoints({x: 1, y: 0}, {x: 0, y: 1});
+        expect(res).toBeCloseTo(Math.sqrt(2), 5);
+    });
+
 });
