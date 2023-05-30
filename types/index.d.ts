@@ -61,6 +61,10 @@ export declare class PointCal {
         x: number;
         y: number;
     };
+    static transform2NewAxis(point: point, angleFromOriginalAxis2DestAxis: number): {
+        x: number;
+        y: number;
+    };
     static angleFromA2B(a: point, b: point): number;
     static transformPointWRTAnchor(point: point, anchor: point, angle: number): {
         x: number;
