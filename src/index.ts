@@ -71,6 +71,11 @@ export class PointCal {
         return {x: point.x * Math.cos(angle) - point.y * Math.sin(angle), y: point.x * Math.sin(angle) + point.y * Math.cos(angle)};
     }
 
+    static transform2NewAxis(point: point, angleFromOriginalAxis2DestAxis: number) {
+        // angle is the angle from the original axis to the destination axis ccw is positive as always
+        return {x: point.x * Math.cos(angleFromOriginalAxis2DestAxis) + point.y * Math.sin(angleFromOriginalAxis2DestAxis), y: -point.x * Math.sin(angleFromOriginalAxis2DestAxis) + point.y * Math.cos(angleFromOriginalAxis2DestAxis)};
+    }
+
     static angleFromA2B(a: point, b: point) {
         return Math.atan2(a.x * b.y - a.y * b.x, a.x * b.x + a.y * b.y);
     }

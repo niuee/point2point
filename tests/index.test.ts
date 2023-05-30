@@ -43,6 +43,12 @@ describe("Point to Point operations", () => {
         expect(Point2Point.PointCal.unitVectorFromA2B({x: 1, y: 0}, {x: 0, y: 1})).toEqual(expect.objectContaining({x: -1/Math.sqrt(2), y: 1/Math.sqrt(2)}))
     });
 
+
+    test("Transform Point Coordinate to another set of axis", ()=>{
+        expect(Point2Point.PointCal.transform2NewAxis({x: -2, y: 4}, 0.6435029).x).toBeCloseTo(4/5, 4);
+        expect(Point2Point.PointCal.transform2NewAxis({x: -2, y: 4}, 0.6435029).y).toBeCloseTo(22/5, 4);
+    });
+
     describe("Point Transformation", () => {
         test("Rotate Point", () => {
             let res = Point2Point.PointCal.rotatePoint({x: 1, y: 0}, Math.PI/ 2);

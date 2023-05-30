@@ -2,10 +2,10 @@
   "name": "point2point",
   "version": "0.0.1",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "./build/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/index.js",
+    "start": "node ./build/index.js",
     "test": "jest"
   },
   "keywords": [],
