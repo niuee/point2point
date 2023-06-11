@@ -90,6 +90,11 @@ export class PointCal {
     static distanceBetweenPoints(a: point, b: point) {
         return this.magnitude(this.subVector(a, b));
     }
+
+    static flipYAxis(point: point){
+        point.y = -point.y;
+        return point;
+    }
     
 }
     
