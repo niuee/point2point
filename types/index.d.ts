@@ -76,4 +76,5 @@ export declare class PointCal {
         z: number;
     };
     static distanceBetweenPoints(a: point, b: point): number;
+    static flipYAxis(point: point): point;
 }

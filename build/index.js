@@ -87,6 +87,10 @@ class PointCal {
     static distanceBetweenPoints(a, b) {
         return this.magnitude(this.subVector(a, b));
     }
+    static flipYAxis(point) {
+        point.y = -point.y;
+        return point;
+    }
 }
 exports.PointCal = PointCal;
 //# sourceMappingURL=index.js.map
