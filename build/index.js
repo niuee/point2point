@@ -72,6 +72,10 @@ class PointCal {
     static rotatePoint(point, angle) {
         return { x: point.x * Math.cos(angle) - point.y * Math.sin(angle), y: point.x * Math.sin(angle) + point.y * Math.cos(angle) };
     }
+    static transform2NewAxis(point, angleFromOriginalAxis2DestAxis) {
+        // angle is the angle from the original axis to the destination axis ccw is positive as always
+        return { x: point.x * Math.cos(angleFromOriginalAxis2DestAxis) + point.y * Math.sin(angleFromOriginalAxis2DestAxis), y: -point.x * Math.sin(angleFromOriginalAxis2DestAxis) + point.y * Math.cos(angleFromOriginalAxis2DestAxis) };
+    }
     static angleFromA2B(a, b) {
         return Math.atan2(a.x * b.y - a.y * b.x, a.x * b.x + a.y * b.y);
     }
@@ -82,6 +86,10 @@ class PointCal {
     }
     static distanceBetweenPoints(a, b) {
         return this.magnitude(this.subVector(a, b));
+    }
+    static flipYAxis(point) {
+        point.y = -point.y;
+        return point;
     }
 }
 exports.PointCal = PointCal;

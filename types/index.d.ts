@@ -61,6 +61,10 @@ export declare class PointCal {
         x: number;
         y: number;
     };
+    static transform2NewAxis(point: point, angleFromOriginalAxis2DestAxis: number): {
+        x: number;
+        y: number;
+    };
     static angleFromA2B(a: point, b: point): number;
     static transformPointWRTAnchor(point: point, anchor: point, angle: number): {
         x: number;
@@ -72,4 +76,5 @@ export declare class PointCal {
         z: number;
     };
     static distanceBetweenPoints(a: point, b: point): number;
+    static flipYAxis(point: point): point;
 }
