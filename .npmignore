@@ -3,3 +3,4 @@ dist
 tests
 tsconfig.json
 jest.config.js
+rollup.config.js

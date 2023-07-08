@@ -6,6 +6,18 @@ This is a minimal 2D vector calculation library that I wrote for my horse race t
 
 The Overall wrapping class is ```PointCal```. 
 
+To install and try this out
+```bash
+npm install point2point
+```
+
+import the PointCal class
+```javascript
+import { PointCal } from "point2point";
+```
+
+To use it in when cloning from github follow the below instructions. 
+
 This package is not currently on npm or other package manager. To use it, you would have to clone the repo and use local dependency in the ```package.json```. It can be something like this.
 
 #### **`package.json`**
@@ -22,7 +34,19 @@ Or you can use `npm link`
 The calculations that this library is capable of is listed below.
 
 - Vector Addition 
+
+```javascript
+PointCal.addVector({x: 0, y: 1}, {x: 1, y: 2})
+// this would return a {x: number, y: number} object
+// which in this case would be {x: 1, y: 3}
+```
+
 - Vector Subtraction
+```javascript
+PointCal.subVector({x: 0, y: 1}, {x: 1, y: 2})
+// this would return a {x: number, y: number} object
+// which in this case would be {x: -1, y: -1}
+```
 - Multiply A Vector With a Scalar Value
 - Unit Vector of a Vector
 - Unit Vector from Point A to Point B
