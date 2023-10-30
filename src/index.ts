@@ -43,7 +43,7 @@ export class PointCal {
 
     static unitVector(a: point) {
         if (a.z == null) a.z = 0;
-        return {x: a.x / this.magnitude(a), y: a.y / this.magnitude(a), z: a.z / this.magnitude(a)};
+        return this.magnitude(a) != 0 ? {x: a.x / this.magnitude(a), y: a.y / this.magnitude(a), z: a.z / this.magnitude(a)} : {x: 0, y: 0, z: 0};
     }
 
     static dotProduct(a: point, b: point) {
@@ -94,6 +94,14 @@ export class PointCal {
     static flipYAxis(point: point){
         point.y = -point.y;
         return point;
+    }
+
+    static linearInterpolation(a: point, b: point, t: number): point{
+        if (a.z == null || b.z == null) {
+            return {x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t};
+        } else {
+            return {x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: a.z + (b.z - a.z) * t};
+        }
     }
     
 }

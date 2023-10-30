@@ -27,6 +27,10 @@ describe("Point to Point operations", () => {
         expect(Point2Point.PointCal.unitVector({x: 1, y: 2})).toEqual(expect.objectContaining({x: 0.4472135954999579, y: 0.8944271909999159}))
     });
 
+    test("Unit Vector with 0 magnitude", () => {
+        expect(Point2Point.PointCal.unitVector({x: 0, y: 0})).toEqual(expect.objectContaining({x: 0, y: 0}));
+    });
+
     test("Dot Product", () => {
         expect(Point2Point.PointCal.dotProduct({x: 1, y: 2}, {x: 3, y: 4})).toBe(11)
     });
@@ -75,5 +79,12 @@ describe("Miscellaneous", ()=>{
     test("Flip Y Axis", ()=>{
         let res = Point2Point.PointCal.flipYAxis({x: 1, y: 4});
         expect(res.y).toBe(-4);
+    })
+});
+
+describe("Linear Interpolation between Points", ()=>{
+    test("Given two points {x: 0, y: 100}, and {x: 60, y: 40}, and a t val of 0.5", ()=>{
+        let res = Point2Point.PointCal.linearInterpolation({x: 0, y: 100}, {x: 60, y: 40}, 0.5);
+        expect(res).toEqual(expect.objectContaining({x: 30, y: 70}));
     })
 });
