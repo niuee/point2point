@@ -11,25 +11,10 @@ To install and try this out
 npm install point2point
 ```
 
-import the PointCal class
+import the ```PointCal``` class
 ```javascript
 import { PointCal } from "point2point";
 ```
-
-To use it in when cloning from github follow the below instructions. 
-
-This package is not currently on npm or other package manager. To use it, you would have to clone the repo and use local dependency in the ```package.json```. It can be something like this.
-
-#### **`package.json`**
-``` json
-"dependencies": {
-    ...
-    ...
-    "point2point": "./submodules/point2point"
-  }
-```
-
-Or you can use `npm link`
 
 The calculations that this library is capable of is listed below.
 
