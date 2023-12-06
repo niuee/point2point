@@ -1,6 +1,6 @@
 {
   "name": "point2point",
-  "version": "0.0.92",
+  "version": "0.0.93",
   "description": "",
   "main": "./build/cjs/index.js",
   "module": "./build/esm/index.js",
@@ -11,6 +11,14 @@
     "build": "rollup -c --bundleConfigAsCjs"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niuee/point2point.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niuee/point2point/issues"
+  },
+  "homepage": "https://github.com/niuee/point2point#readme",
   "author": "",
   "license": "ISC",
   "devDependencies": {
