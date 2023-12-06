@@ -14,7 +14,7 @@
       "noEmitOnError": true,
       "noImplicitAny": true
     },
-    "include": ["src/**/*", "tests/index.test.ts"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules", "**/*.test.ts", "dist", "build"]
   }
   
