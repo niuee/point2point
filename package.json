@@ -1,15 +1,14 @@
 {
   "name": "point2point",
-  "version": "0.0.9",
+  "version": "0.0.92",
   "description": "",
   "main": "./build/cjs/index.js",
   "module": "./build/esm/index.js",
   "types": "./build/types.d.ts",
   "scripts": {
-    "build": "tsc",
     "start": "node ./build/index.js",
     "test": "jest",
-    "rollup": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c --bundleConfigAsCjs"
   },
   "keywords": [],
   "author": "",
