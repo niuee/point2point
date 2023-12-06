@@ -78,8 +78,11 @@ describe("Point to Point operations", () => {
 describe("Miscellaneous", ()=>{
     test("Flip Y Axis", ()=>{
         let res = Point2Point.PointCal.flipYAxis({x: 1, y: 4});
-        expect(res.y).toBe(-4);
-    })
+        res = Point2Point.PointCal.multiplyVectorByScalar(res, 10);
+        expect(res.y).toBe(-40);
+        expect(res.z).toBe(undefined);
+    });
+
 });
 
 describe("Linear Interpolation between Points", ()=>{

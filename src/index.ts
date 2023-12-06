@@ -4,6 +4,12 @@ export type point = {
     z?: number;
 }
 
+export type Point = {
+    x: number;
+    y: number;
+    z?: number;
+}
+
 
 export class PointCal {
 
@@ -80,7 +86,6 @@ export class PointCal {
         return Math.atan2(a.x * b.y - a.y * b.x, a.x * b.x + a.y * b.y);
     }
 
-
     static transformPointWRTAnchor(point: point, anchor: point, angle: number) {
         // angle is in radians
         let newPoint = this.rotatePoint(this.subVector(point, anchor), angle);
@@ -91,9 +96,8 @@ export class PointCal {
         return this.magnitude(this.subVector(a, b));
     }
 
-    static flipYAxis(point: point){
-        point.y = -point.y;
-        return point;
+    static flipYAxis(point: point): point{
+        return {x: point.x, y: -point.y, z: point.z};
     }
 
     static linearInterpolation(a: point, b: point, t: number): point{
