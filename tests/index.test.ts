@@ -2,6 +2,12 @@ import * as Point2Point from "../src/index";
 
 describe("Point to Point operations", () => {
 
+    test("Check if two points have the same values", ()=>{
+        expect(Point2Point.PointCal.isEqual({x: 1, y: 2}, {x: 1, y: 2})).toBe(true);
+        expect(Point2Point.PointCal.isEqual({x: 1, y: 2, z: 1}, {x: 1, y: 2})).toBe(false);
+        expect(Point2Point.PointCal.isEqual({x: 1, y: 2}, {x: 1, y: 3})).toBe(false);
+    });
+
     test("Addition", () => {
         expect(Point2Point.PointCal.addVector({x: 1, y: 2}, {x: 3, y: 4})).toEqual(expect.objectContaining({x: 4, y: 6}))
     });
@@ -71,6 +77,7 @@ describe("Point to Point operations", () => {
         let res = Point2Point.PointCal.distanceBetweenPoints({x: 1, y: 0}, {x: 0, y: 1});
         expect(res).toBeCloseTo(Math.sqrt(2), 5);
     });
+
 
 });
 

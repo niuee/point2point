@@ -107,6 +107,16 @@ export class PointCal {
             return {x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: a.z + (b.z - a.z) * t};
         }
     }
+
+    static isEqual(a: point, b: point): boolean{
+        if (a.z == null){
+            a.z = 0;
+        }
+        if (b.z == null){
+            b.z = 0;
+        }
+        return a.x == b.x && a.y == b.y && a.z == b.z;
+    }
     
 }
     
