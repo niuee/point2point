@@ -1,6 +1,6 @@
 {
   "name": "point2point",
-  "version": "0.0.93",
+  "version": "0.0.94",
   "description": "",
   "main": "./build/cjs/index.js",
   "module": "./build/esm/index.js",
